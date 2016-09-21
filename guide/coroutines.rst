@@ -105,6 +105,8 @@ should say that the method "may be a coroutine" or "may return a
     def good_call():
         # yield will unwrap the Future returned by divide() and raise
         # the exception.
+        # I think should be this:
+        #   coroutine decorator will send real value(no matter normal execution or exception happens) to generator
         yield divide(1, 0)
 
 Sometimes you may want to "fire and forget" a coroutine without waiting
